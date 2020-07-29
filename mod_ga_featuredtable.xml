@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>JD Featured Table</name>
+	<creationDate>July 2015</creationDate>
+	<version>1.9.3</version>
+	<author>JoomDev (Formerly GraphicAholic)</author>
+	<copyright>Copyright (C) 2020 Joomdev, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@joomdev.com</authorEmail>
+	<authorUrl>https://www.joomdev.com</authorUrl>
+
+	<description>
+	<![CDATA[
+		<div class="alert alert-info" style="font-weight: normal;">
+			<h3>JD Featured Table</h3>
+			<p>JD Featured Table is a Joomla module that lets you create responsive interactive price boxes for your services or products.</p>
+			<p>JD Featured Table formerly known as GA Featured Table from Graphicaholic is now moved to JoomDev along with other Extensions. <strong>Check out the <a href="https://www.joomdev.com/graphicaholic" target="_blank">Announcement here.</a></strong></p>
+			<a href="https://www.joomdev.com/forum/jd-featured-table" target="_blank">Support</a> | <span>Demo</span> | <a href="https://www.joomdev.com/products/extensions/jd-featured-table" target="_blank">More Details</a>
+		</div>
+	]]>
+	</description>
+
+	<files>
+		<filename module="mod_ga_featuredtable">mod_ga_featuredtable.php</filename>
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>elements</folder>
+		<filename>index.html</filename>
+		<filename>mod_ga_featuredtable.xml</filename>
+	</files>
+
+	<updateservers>
+		<server type="extension" priority="1" name="JD Featured Table">https://joomdev.com/updates/ga_featuredtable.xml</server>
+	</updateservers>
+
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_ga_featuredtable/elements">
+			<!-- General Settings -->
+			<fieldset name="general" group="general" label="Module Settings">
+				<field name="NumberOfColumns" type="list" default="0" label="Number of Columns" description="Number of columns to display">
+					<option value="ga-1col">One Column Only</option>
+					<option value="ga-2cols">Two Columns</option>
+					<option value="ga-3cols">Three Columns</option>
+					<option value="ga-4cols">Four Columns</option>
+					<option value="ga-5cols">Five Columns</option>
+					<option value="ga-6cols">Six Columns</option>
+				</field>
+				<field name="columnSpacing" type="text" default="0" label="Space between columns" description="Enter a value to create open spacing between each coulmn." size="36" />
+				<field name="bottomMargin" type="text" default="20" label="Bottom Margin" description="Enter a value to increase or decrease your bottom margin." size="36" />
+				<field name="FeatureTableStyle" type="list" default="ga-earth14" label="Styles" description="Styles">
+					<option value="ga-earth1">Style 1</option>
+					<option value="ga-earth2">Style 2</option>
+					<option value="ga-earth3a">Style 3a</option>
+					<option value="ga-earth3b">Style 3b</option>
+					<option value="ga-earth3c">Style 3c</option>
+					<option value="ga-earth3d">Style 3d</option>
+					<option value="ga-earth4a">Style 4a</option>
+					<option value="ga-earth4b">Style 4b</option>
+					<option value="ga-earth4c">Style 4c</option>
+					<option value="ga-earth4d">Style 4d</option>
+					<option value="ga-earth5">Style 5</option>
+					<option value="ga-earth6">Style 6</option>
+					<option value="ga-earth7">Style 7</option>
+					<option value="ga-earth8">Style 8</option>
+					<option value="ga-earth9">Style 9</option>
+					<option value="ga-earth10">Style 10</option>
+					<option value="ga-earth11a">Style 11a</option>
+					<option value="ga-earth11b">Style 11b</option>
+					<option value="ga-earth11c">Style 11c</option>
+					<option value="ga-earth11d">Style 11d</option>
+					<option value="ga-earth12">Style 12</option>
+					<option value="ga-earth13">Style 13</option>
+					<option value="ga-earth14">Style 14</option>
+					<option value="ga-earth15">Style 15</option>
+				</field>
+
+				<field name="toolTipInfo" type="info" default="ToolTip Settings" />
+				<field name="tooltipSize" type="Text" default="130" label="Tooltip Box Width" description="Tooltip Box Width." size="36" />
+				<field name="tooltipBackgroundColor" type="color" default="#9e8c4f" label="Tooltip Background Color" description="Click onto HEX value to bring-up the Colorpicker box" />
+				<field name="tooltipTextColor" type="color" default="#ffffff" label="Tooltip Text Color" description="Click onto HEX value to bring-up the Colorpicker box" />
+
+				<field name="specialEffectsInfo" type="info" default="Special Effects Settings" />
+				<field name="ColumnOneLocation" type="radio" class="btn-group" default="left" label="Column 1 Ribbon Position" description="Column Ribbon Position">
+					<option value="left">Top Left</option>
+					<option value="right">Top Right</option>
+				</field>
+				<field name="ColumnOneRibbon" type="text" default="" label="Column 1 Ribbon Suffix" description="Enter Ribbon Class Suffix you wish to use. Leave blank for none." size="36" />
+				<field name="ColumnTwoLocation" type="radio" class="btn-group" default="left" label="Column 2 Ribbon Position" description="Column Ribbon Position">
+					<option value="left">Top Left</option>
+					<option value="right">Top Right</option>
+				</field>
+				<field name="ColumnTwoRibbon" type="text" default="" label="Column 2 Ribbon Suffix" description="Enter Ribbon Class Suffix you wish to use. Leave blank for none." size="36" />
+				<field name="ColumnThreeLocation" type="radio" class="btn-group" default="left" label="Column 3 Ribbon Position" description="Column Ribbon Position">
+					<option value="left">Top Left</option>
+					<option value="right">Top Right</option>
+				</field>
+				<field name="ColumnThreeRibbon" type="text" default="" label="Column 3 Ribbon Suffix" description="Enter Ribbon Class Suffix you wish to use. Leave blank for none." size="36" />
+				<field name="ColumnFourLocation" type="radio" class="btn-group" default="left" label="Column 4 Ribbon Position" description="Column Ribbon Position">
+					<option value="left">Top Left</option>
+					<option value="right">Top Right</option>
+				</field>
+				<field name="ColumnFourRibbon" type="text" default="" label="Column 4 Ribbon Suffix" description="Enter Ribbon Class Suffix you wish to use. Leave blank for none." size="36" />
+				<field name="ColumnFiveLocation" type="radio" class="btn-group" default="left" label="Column 5 Ribbon Position" description="Column Ribbon Position">
+					<option value="left">Top Left</option>
+					<option value="right">Top Right</option>
+				</field>
+				<field name="ColumnFiveRibbon" type="text" default="" label="Column 5 Ribbon Suffix" description="Enter Ribbon Class Suffix you wish to use. Leave blank for none." size="36" />
+				<field name="ColumnSixLocation" type="radio" class="btn-group" default="left" label="Column 6 Ribbon Position" description="Column Ribbon Position">
+					<option value="left">Top Left</option>
+					<option value="right">Top Right</option>
+				</field>
+				<field name="ColumnSixRibbon" type="text" default="" label="Column 6 Ribbon Suffix" description="Enter Ribbon Class Suffix you wish to use. Leave blank for none." size="36" />
+				<field name="dropShadowInfo" type="info" default="Drop Shadow Styles" />
+				<field name="dropShadowEffect" type="list" class="btn-group" default="" label="Drow Shadow Effect" description="If a shadow effect is selected, it will show on all active columns.">
+					<option value="">None</option>
+					<option value="shadow1">Drop Shadow Effect 1</option>
+					<option value="shadow2">Drop Shadow Effect 2</option>
+					<option value="shadow3">Drop Shadow Effect 3</option>
+					<option value="shadow4">Drop Shadow Effect 4</option>
+					<option value="shadow5">Drop Shadow Effect 5</option>
+				</field>
+
+				<field name="useOverridesInfo" type="info" default="Media Overrides" />
+				<field name="useOverrides" type="radio" class="btn-group" default="0" label="Override Media Queries" description="Override Media Queries">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="oneColumnOverride" showon="NumberOfColumns:ga-1col" type="text" default="" label="One Column Width" description="One coulum width override in percentage or fixed pixels." size="36" />
+				<field name="twoColumnOverride" showon="NumberOfColumns:ga-2cols" type="text" default="" label="Two Columns Width" description="Two coulums width override in percentage or fixed pixels." size="36" />
+				<field name="threeColumnOverride" showon="NumberOfColumns:ga-3cols" type="text" default="" label="Three Columns Width" description="Three coulums width override in percentage or fixed pixels." size="36" />
+				<field name="fourColumnOverride" showon="NumberOfColumns:ga-4cols" type="text" default="" label="Four Columns Width" description="Four coulums width override in percentage or fixed pixels." size="36" />
+				<field name="fiveColumnOverride" showon="NumberOfColumns:ga-5cols" type="text" default="" label="Five Columns Width" description="Five coulums width override in percentage or fixed pixels." size="36" />
+				<field name="sixColumnOverride" showon="NumberOfColumns:ga-6cols" type="text" default="" label="Six Columns Width" description="Six coulums width override in percentage or fixed pixels." size="36" />
+
+			</fieldset>
+			<fieldset name="columnone" group="columnone" label="1st Column Settings">
+				<field name="enableColumnOne" type="radio" class="btn-group" default="1" label="Enable This Column?" description="Enable This Column?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="featuredColumnOne" type="radio" class="btn-group" default="0" label="Feature This Column?" description="If enabled, this column will be taller and hilighted">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnOneTitle" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Title" description="Column One Title." size="36" />
+				<field name="priceOneHilite" type="radio" class="btn-group" default="1" label="Use Price High Lighter?" description="Use Price High Lighter?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnOnePrice" type="text" filter="raw" default="" label="Column Price" description="Column One Price." size="36" />
+				<field name="columnOneTag" type="text" filter="raw" default="" label="Column Tagline" description="IMPORTANT: Keep it short!." size="36" />
+				<field name="filteringspacer001" type="spacer" hr="true" />
+
+				<field name="C1R1hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnOneRowOnedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row One Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnOneRowOneTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnOneRowOneTooltip" showon="enableColumnOneRowOneTooltip:1" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row One Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer002" type="spacer" hr="true" />
+				<field name="C1R2hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnOneRowTwodata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Two Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnOneRowTwoTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnOneRowTwoTooltip" showon="enableColumnOneRowTwoTooltip:1" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Two Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer003" type="spacer" hr="true" />
+				<field name="C1R3hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnOneRowThreedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Three Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnOneRowThreeTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnOneRowThreeTooltip" showon="enableColumnOneRowThreeTooltip:1" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Three Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer004" type="spacer" hr="true" />
+				<field name="C1R4hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnOneRowFourdata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Four Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnOneRowFourTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnOneRowFourTooltip" showon="enableColumnOneRowFourTooltip:1" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Four Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer005" type="spacer" hr="true" />
+				<field name="C1R5hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnOneRowFivedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Five Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnOneRowFiveTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnOneRowFiveTooltip" showon="enableColumnOneRowFiveTooltip:1" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Five Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer006" type="spacer" hr="true" />
+				<field name="columnOneButtondata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column One Button Data" description="Column One Button Data. HTML tags allowed" size="36" />
+				<field name="buttonOneEffect" type="radio" class="btn-group" default="ga-btn" label="Use CSS Button Style?" description="Use CSS button style?">
+					<option value="ga-btn">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnOneURL" type="text" default="" label="Column One Button URL" description="Column One Button URL." size="36" />
+				<field name="columnOneWindow" type="radio" class="btn-group" default="_blank" label="Open URL In?" description="">
+					<option value="_self">Same Window</option>
+					<option value="_blank">New Window</option>
+				</field>
+			</fieldset>
+			<fieldset name="columntwo" group="columntwo" label="2nd Column Settings">
+				<field name="enableColumnTwo" type="radio" class="btn-group" default="1" label="Enable This Column?" description="Enable This Column?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="featuredColumnTwo" type="radio" class="btn-group" default="0" label="Feature This Column?" description="If enabled, this column will be taller and hilighted">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnTwoTitle" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Title" description="Column Two Title." size="36" />
+				<field name="priceTwoHilite" type="radio" class="btn-group" default="1" label="Use Price High Lighter?" description="Use Price High Lighter?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnTwoPrice" type="text" filter="raw" default="" label="Column Price" description="Column Two Price." size="36" />
+				<field name="columnTwoTag" type="text" filter="raw" default="" label="Column Tagline" description="IMPORTANT: Keep it short!." size="36" />
+				<field name="filteringspacer006" type="spacer" hr="true" />
+				<field name="C2R1hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnTwoRowOnedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row One Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnTwoRowOneTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnTwoRowOneTooltip" type="textarea" showon="enableColumnTwoRowOneTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row One Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer007" type="spacer" hr="true" />
+				<field name="C2R2hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnTwoRowTwodata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Two Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnTwoRowTwoTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnTwoRowTwoTooltip" type="textarea" showon="enableColumnTwoRowTwoTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Two Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer008" type="spacer" hr="true" />
+				<field name="C2R3hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnTwoRowThreedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Three Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnTwoRowThreeTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnTwoRowThreeTooltip" type="textarea" showon="enableColumnTwoRowThreeTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Three Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer009" type="spacer" hr="true" />
+				<field name="C2R4hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnTwoRowFourdata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Four Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnTwoRowFourTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnTwoRowFourTooltip" type="textarea" showon="enableColumnTwoRowFourTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Four Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer010" type="spacer" hr="true" />
+
+				<field name="C2R5hi" type="radio" class="btn-group" default="0" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnTwoRowFivedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Five Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnTwoRowFiveTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnTwoRowFiveTooltip" type="textarea" showon="enableColumnTwoRowFiveTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Five Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer011" type="spacer" hr="true" />
+				<field name="columnTwoButtondata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column One Button Data" description="Column Two Button Data. HTML tags allowed" size="36" />
+				<field name="buttonTwoEffect" type="radio" class="btn-group" default="ga-btn" label="Use CSS Button Style?" description="Use CSS button style?">
+					<option value="ga-btn">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnTwoURL" type="text" default="" label="Column One Button URL" description="Column Two Button URL." size="36" />
+				<field name="columnTwoWindow" type="radio" class="btn-group" default="_blank" label="Open URL In?" description="">
+					<option value="_self">Same Window</option>
+					<option value="_blank">New Window</option>
+				</field>
+			</fieldset>
+			<fieldset name="columnthree" group="columnthree" label="3rd Column Settings">
+				<field name="enableColumnThree" type="radio" class="btn-group" default="1" label="Enable This Column?" description="Enable This Column?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="featuredColumnThree" type="radio" class="btn-group" default="0" label="Feature This Column?" description="If enabled, this column will be taller and hilighted">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnThreeTitle" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Title" description="Column Three Title." size="36" />
+				<field name="priceThreeHilite" type="radio" class="btn-group" default="1" label="Use Price High Lighter?" description="Use Price High Lighter?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnThreePrice" type="text" filter="raw" default="" label="Column Price" description="Column Three Price." size="36" />
+				<field name="columnThreeTag" type="text" filter="raw" default="" label="Column Tagline" description="IMPORTANT: Keep it short!." size="36" />
+				<field name="filteringspacer012" type="spacer" hr="true" />
+				<field name="C3R1hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnThreeRowOnedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row One Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnThreeRowOneTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnThreeRowOneTooltip" type="textarea" showon="enableColumnThreeRowOneTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row One Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer013" type="spacer" hr="true" />
+				<field name="C3R2hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnThreeRowTwodata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Two Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnThreeRowTwoTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnThreeRowTwoTooltip" type="textarea" showon="enableColumnThreeRowTwoTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Two Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer014" type="spacer" hr="true" />
+				<field name="C3R3hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnThreeRowThreedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Three Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnThreeRowThreeTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnThreeRowThreeTooltip" type="textarea" showon="enableColumnThreeRowThreeTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Three Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer015" type="spacer" hr="true" />
+				<field name="C3R4hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnThreeRowFourdata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Four Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnThreeRowFourTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnThreeRowFourTooltip" type="textarea" showon="enableColumnThreeRowFourTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Four Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer016" type="spacer" hr="true" />
+				<field name="C3R5hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnThreeRowFivedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Five Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnThreeRowFiveTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnThreeRowFiveTooltip" type="textarea" showon="enableColumnThreeRowFiveTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Five Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer017" type="spacer" hr="true" />
+				<field name="columnThreeButtondata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Three Button Data" description="Column Three Button Data. HTML tags allowed" size="36" />
+				<field name="buttonThreeEffect" type="radio" class="btn-group" default="ga-btn" label="Use CSS Button Style?" description="Use CSS button style?">
+					<option value="ga-btn">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnThreeURL" type="text" default="" label="Column Three Button URL" description="Column Three Button URL." size="36" />
+				<field name="columnThreeWindow" type="radio" class="btn-group" default="_blank" label="Open URL In?" description="">
+					<option value="_self">Same Window</option>
+					<option value="_blank">New Window</option>
+				</field>
+			</fieldset>
+			<fieldset name="columnfour" group="columnfour" label="4th Column Settings">
+				<field name="enableColumnFour" type="radio" class="btn-group" default="1" label="Enable This Column?" description="Enable This Column?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="featuredColumnFour" type="radio" class="btn-group" default="0" label="Feature This Column?" description="If enabled, this column will be taller and hilighted">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFourTitle" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Title" description="Column Three Title." size="36" />
+				<field name="priceFourHilite" type="radio" class="btn-group" default="1" label="Use Price High Lighter?" description="Use Price High Lighter?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFourPrice" type="text" filter="raw" default="" label="Column Price" description="Column Three Price." size="36" />
+				<field name="columnFourTag" type="text" filter="raw" default="" label="Column Tagline" description="IMPORTANT: Keep it short!." size="36" />
+				<field name="filteringspacer018" type="spacer" hr="true" />
+				<field name="C4R1hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFourRowOnedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row One Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFourRowOneTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFourRowOneTooltip" type="textarea" showon="enableColumnFourRowOneTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row One Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer019" type="spacer" hr="true" />
+				<field name="C4R2hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFourRowTwodata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Two Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFourRowTwoTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFourRowTwoTooltip" type="textarea" showon="enableColumnFourRowTwoTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Two Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer020" type="spacer" hr="true" />
+				<field name="C4R3hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFourRowThreedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Three Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFourRowThreeTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFourRowThreeTooltip" type="textarea" showon="enableColumnFourRowThreeTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Three Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer021" type="spacer" hr="true" />
+				<field name="C4R4hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFourRowFourdata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Four Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFourRowFourTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFourRowFourTooltip" type="textarea" showon="enableColumnFourRowFourTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Four Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer022" type="spacer" hr="true" />
+				<field name="C4R5hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFourRowFivedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Five Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFourRowFiveTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFourRowFiveTooltip" type="textarea" showon="enableColumnFourRowFiveTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Five Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer023" type="spacer" hr="true" />
+				<field name="columnFourButtondata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Four Button Data" description="Column Four Button Data. HTML tags allowed" size="36" />
+				<field name="buttonFourEffect" type="radio" class="btn-group" default="ga-btn" label="Use CSS Button Style?" description="Use CSS button style?">
+					<option value="ga-btn">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFourURL" type="text" default="" label="Column Four Button URL" description="Column Four Button URL." size="36" />
+				<field name="columnFourWindow" type="radio" class="btn-group" default="_blank" label="Open URL In?" description="">
+					<option value="_self">Same Window</option>
+					<option value="_blank">New Window</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="columnfive" group="columnfive" label="5th Column Settings">
+				<field name="enableColumnFive" type="radio" class="btn-group" default="1" label="Enable This Column?" description="Enable This Column?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="featuredColumnFive" type="radio" class="btn-group" default="0" label="Feature This Column?" description="If enabled, this column will be taller and hilighted">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFiveTitle" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Title" description="Column Three Title." size="36" />
+				<field name="priceFiveHilite" type="radio" class="btn-group" default="1" label="Use Price High Lighter?" description="Use Price High Lighter?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFivePrice" type="text" filter="raw" default="" label="Column Price" description="Column Three Price." size="36" />
+				<field name="columnFiveTag" type="text" filter="raw" default="" label="Column Tagline" description="IMPORTANT: Keep it short!." size="36" />
+				<field name="filteringspacer024" type="spacer" hr="true" />
+				<field name="C5R1hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFiveRowOnedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row One Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFiveRowOneTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFiveRowOneTooltip" type="textarea" showon="enableColumnFiveRowOneTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row One Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer025" type="spacer" hr="true" />
+				<field name="C5R2hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFiveRowTwodata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Two Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFiveRowTwoTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFiveRowTwoTooltip" type="textarea" showon="enableColumnFiveRowTwoTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Two Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer026" type="spacer" hr="true" />
+				<field name="C5R3hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFiveRowThreedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Three Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFiveRowThreeTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFiveRowThreeTooltip" type="textarea" showon="enableColumnFiveRowThreeTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Three Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer027" type="spacer" hr="true" />
+				<field name="C5R4hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFiveRowFourdata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Four Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFiveRowFourTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFiveRowFourTooltip" type="textarea" showon="enableColumnFiveRowFourTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Four Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer028" type="spacer" hr="true" />
+				<field name="C5R5hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="columnFiveRowFivedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Five Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnFiveRowFiveTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFiveRowFiveTooltip" type="textarea" showon="enableColumnFiveRowFiveTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Five Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer029" type="spacer" hr="true" />
+				<field name="columnFiveButtondata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Five Button Data" description="Column Five Button Data. HTML tags allowed" size="36" />
+				<field name="buttonFiveEffect" type="radio" class="btn-group" default="ga-btn" label="Use CSS Button Style?" description="Use CSS button style?">
+					<option value="ga-btn">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="columnFiveURL" type="text" default="" label="Column Five Button URL" description="Column Five Button URL." size="36" />
+				<field name="columnFiveWindow" type="radio" class="btn-group" default="_blank" label="Open URL In?" description="">
+					<option value="_self">Same Window</option>
+					<option value="_blank">New Window</option>
+				</field>
+			</fieldset>
+			<fieldset name="columnsix" group="columnsix" label="6th Column Settings">
+				<field name="enableColumnSix" type="radio" class="btn-group" default="1" label="Enable This Column?" description="Enable This Column?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="featuredColumnSix" type="radio" class="btn-group" default="0" label="Feature This Column?" description="If enabled, this column will be taller and hilighted">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ColumnSixTitle" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Title" description="Column Three Title." size="36" />
+				<field name="priceSixHilite" type="radio" class="btn-group" default="1" label="Use Price High Lighter?" description="Use Price High Lighter?">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ColumnSixPrice" type="text" filter="raw" default="" label="Column Price" description="Column Three Price." size="36" />
+				<field name="ColumnSixTag" type="text" filter="raw" default="" label="Column Tagline" description="IMPORTANT: Keep it short!." size="36" />
+				<field name="filteringspacer030" type="spacer" hr="true" />
+				<field name="C6R1hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="ColumnSixRowOnedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row One Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnSixRowOneTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ColumnSixRowOneTooltip" type="textarea" showon="enableColumnSixRowOneTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row One Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer031" type="spacer" hr="true" />
+				<field name="C6R2hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="ColumnSixRowTwodata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Two Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnSixRowTwoTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ColumnSixRowTwoTooltip" type="textarea" showon="enableColumnSixRowTwoTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Two Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer032" type="spacer" hr="true" />
+				<field name="C6R3hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="ColumnSixRowThreedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Three Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnSixRowThreeTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ColumnSixRowThreeTooltip" type="textarea" showon="enableColumnSixRowThreeTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Three Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer033" type="spacer" hr="true" />
+				<field name="C6R4hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="ColumnSixRowFourdata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Four Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnSixRowFourTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ColumnSixRowFourTooltip" type="textarea" showon="enableColumnSixRowFourTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Four Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer034" type="spacer" hr="true" />
+				<field name="C6R5hi" type="radio" class="btn-group" default="ga-odd" label="Highlight This Row?" description="">
+					<option value="ga-even">Yes</option>
+					<option value="ga-odd">No</option>
+				</field>
+				<field name="ColumnSixRowFivedata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Row Five Data" description="IMPORTANT: Do not add any Data if you do not plan on using this Data row! HTML tags allowed." size="36" />
+				<field name="enableColumnSixRowFiveTooltip" type="radio" class="btn-group" default="0" label="Enable This Tooltip" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ColumnSixRowFiveTooltip" type="textarea" showon="enableColumnSixRowFiveTooltip:1" filter="raw" cols="20" rows="2" default="" label="Row Five Tooltip Data" description="IMPORTANT: Do not add any Data if you do not plan on using this tooltip! HTML tags allowed." size="36" />
+				<field name="filteringspacer035" type="spacer" hr="true" />
+				<field name="ColumnSixButtondata" type="textarea" filter="raw" cols="20" rows="2" default="" label="Column Six Button Data" description="Column Five Button Data. HTML tags allowed" size="36" />
+				<field name="buttonSixEffect" type="radio" class="btn-group" default="ga-btn" label="Use CSS Button Style?" description="Use CSS button style?">
+					<option value="ga-btn">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="ColumnSixURL" type="text" default="" label="Column Six Button URL" description="Column Six Button URL." size="36" />
+				<field name="ColumnSixWindow" type="radio" class="btn-group" default="_blank" label="Open URL In?" description="">
+					<option value="_self">Same Window</option>
+					<option value="_blank">New Window</option>
+				</field>
+			</fieldset>
+			<fieldset name="editor" group="editor" label="Data Editor">
+				<field name="editor" type="editor" default="" label="" description="" />
+			</fieldset>
+			<fieldset name="advanced" group="advanced" label="Advanced Joomla Options">
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="" />
+				<field name="cache" type="list" default="0" label="Caching" description="Select whether to cache the content of this module">
+					<option value="1">Use global</option>
+					<option value="0">No caching</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

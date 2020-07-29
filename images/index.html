@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Demo / Smart3D jQuery Plugin v 0.3.4</title>
+        <!-- Including jQuery -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <!-- Including ulslide jQuery plugin -->
+        <script type="text/javascript" src="js/jquery.smart3d.js"></script>
+		
+        <style type="text/css">
+            /* Some document style */
+			
+            /* Demo 3 */
+            #smartdemo3 {
+                width: 660px;
+                height: 170px;
+                overflow: hidden;
+                border:2px solid #444444;
+                margin: 0;
+            }
+            #smartdemo3 li{
+                width: 866px;
+                height: 170px;
+            }
+            #smartdemo3 .content {
+                padding: 0 200px;
+                color: #fff;
+                text-shadow: 0 0 8px #000000;
+            }
+        </style>
+		
+        <script type="text/javascript">
+            $(document).ready(function() {				
+                $('#smartdemo3').smart3d({
+first_is_static: false,
+horizontal: true,			
+vertical: true,
+invertHorizontal: true, 
+invertVertical: true,
+last_is_static: false });
+            });
+        </script>
+    </head>
+    <body>
+        <ul id="smartdemo3">
+            <li><img src="mindscape/background.png" /></li>
+            <li><img src="mindscape/foreground.png" /></li>
+			<li>
+				<div class="content">
+					<h1><br /></h1>
+					<h2>Ron & Linda's honeymoon - Portsmouth, NH</h2>
+					<h3></h3>
+				</div>
+			</li>
+        </ul>
